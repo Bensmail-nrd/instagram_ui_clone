@@ -1,8 +1,23 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:instagram_ui_clone/presentation/widget/like_widget.dart';
 
 import '../../res.dart';
 import 'user_icon.dart';
+
+List res = [
+  Res.a,
+  Res.concert,
+  Res.recording_studio,
+  Res.concert_heart,
+  Res.smily,
+  Res.black,
+  Res.japenis,
+  Res.gay,
+  Res.cowboy,
+  Res.deep
+];
 
 class Post extends StatelessWidget {
   const Post({
@@ -29,7 +44,7 @@ class Post extends StatelessWidget {
             ],
           ),
         ),
-        Image.asset(Res.concert),
+        Image.asset(res[Random().nextInt(res.length - 1)]),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(

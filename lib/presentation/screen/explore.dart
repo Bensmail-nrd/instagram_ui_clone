@@ -17,7 +17,6 @@ class _ExploreState extends State<Explore> with SingleTickerProviderStateMixin {
   late final TabController tabController;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     tabController = TabController(length: 5, vsync: this);
   }
@@ -95,6 +94,16 @@ class _ExploreState extends State<Explore> with SingleTickerProviderStateMixin {
                           const Divider(color: Colors.grey),
                           Column(
                             children: const [
+                              Post(),
+                              Post(),
+                              Post(),
+                              Post(),
+                              Post(),
+                              Post(),
+                              Post(),
+                              Post(),
+                              Post(),
+                              Post(),
                               Post(),
                               Post(),
                               Post(),

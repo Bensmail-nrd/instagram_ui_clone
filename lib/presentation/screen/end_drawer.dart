@@ -9,7 +9,7 @@ class Chat extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: ListView.builder(
-          itemBuilder: (context, index) => ChatListTile(),
+          itemBuilder: (context, index) => const ChatListTile(),
           itemCount: 15,
           shrinkWrap: true),
     );

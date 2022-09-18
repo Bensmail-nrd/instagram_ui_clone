@@ -25,15 +25,12 @@ class _StoryState extends State<Story> {
   void initState() {
     _cameraController = CameraController(
         CameraUtil.instanse.cameras[cam], ResolutionPreset.medium);
-    // TODO: implement initState
     super.initState();
-    print("init state for camera");
   }
 
   @override
   void dispose() {
     _cameraController.dispose();
-    print("dispose for camera");
     super.dispose();
   }
 

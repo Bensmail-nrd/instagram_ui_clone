@@ -13,18 +13,41 @@ class ChatScreen extends StatelessWidget {
     'and you',
     'mind your business',
     'what ?? why',
-    'i"m sorry just kidding'
+    'i"m sorry just kidding',
+    'what"s about studying',
+    'nothing new',
+    'well, ok',
+    'mind your business',
+    'what ?? why',
+    'i"m sorry just kidding',
+    'what"s about studying',
+    'nothing new',
+    'mind your business',
+    'what ?? why',
+    'i"m sorry just kidding',
+    'what"s about studying',
+    'nothing new',
+    'well, ok',
+    'mind your business',
+    'what ?? why',
+    'i"m sorry just kidding',
+    'what"s about studying',
+    'nothing new',
+    'well, ok',
+    'ah, how is your wife'
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        titleSpacing: 0,
+        elevation: 0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: const [
             CircleAvatar(backgroundImage: AssetImage(Res.a)),
             SizedBox(
-              width: 5,
+              width: 12.0,
             ),
             Text("User")
           ],
@@ -44,12 +67,9 @@ class ChatScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          const SizedBox(
-            height: 5,
-          ),
           Expanded(
             child: ListView.builder(
-              itemCount: 15,
+              itemCount: chat.length,
               shrinkWrap: true,
               itemBuilder: (context, index) {
                 return Row(
@@ -70,40 +90,58 @@ class ChatScreen extends StatelessWidget {
               },
             ),
           ),
-          Container(
-            height: 50,
-            margin:
-                const EdgeInsets.only(right: 5, left: 5, bottom: 5, top: 12),
-            padding: const EdgeInsets.all(5),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(22), color: Colors.black12),
-            child: Row(
-              children: [
-                const CircleAvatar(
-                  backgroundColor: Colors.blueAccent,
-                  child: Icon(
-                    Icons.camera_alt,
-                    color: Colors.white,
+          Row(
+            children: [
+              Expanded(
+                child: Container(
+                  height: 50,
+                  margin: const EdgeInsets.only(
+                      right: 5, left: 5, bottom: 5, top: 12),
+                  padding: const EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(22),
+                      color: Colors.black12),
+                  child: Row(
+                    children: [
+                      const CircleAvatar(
+                        backgroundColor: Colors.blueAccent,
+                        child: Icon(
+                          Icons.camera_alt,
+                          color: Colors.white,
+                        ),
+                      ),
+                      const Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 8),
+                          child: TextField(
+                            decoration: InputDecoration(
+                                hintText: 'Message ...',
+                                border: InputBorder.none),
+                          ),
+                        ),
+                      ),
+                      Row(
+                        children: const [
+                          Icon(Icons.keyboard_voice),
+                          Icon(Icons.image),
+                          Icon(Icons.emoji_emotions),
+                        ],
+                      )
+                    ],
                   ),
                 ),
-                const Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8),
-                    child: TextField(
-                      decoration: InputDecoration(
-                          hintText: 'Message ...', border: InputBorder.none),
-                    ),
-                  ),
-                ),
-                Row(
-                  children: const [
-                    Icon(Icons.keyboard_voice),
-                    Icon(Icons.image),
-                    Icon(Icons.emoji_emotions),
-                  ],
-                )
-              ],
-            ),
+              ),
+              InkWell(
+                  splashColor: Colors.transparent,
+                  onTap: () {
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        content: Text("Your message has been sent")));
+                  },
+                  child: const Icon(
+                    Icons.send,
+                    size: 38,
+                  ))
+            ],
           )
         ],
       ),

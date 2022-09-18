@@ -13,7 +13,6 @@ class _ProfileScreenState extends State<ProfileScreen>
   late final TabController tabController;
   @override
   void initState() {
-    // TODO: implement initState
     tabController = TabController(length: 2, vsync: this);
     super.initState();
   }

@@ -23,4 +23,14 @@ class Res {
   static const String send = "assets/instagram-direct.png";
   static const String save = "assets/enregistrer-instagram.png";
   static const String search = "assets/search-interface-symbol.png";
+  static const String japenis = "assets/japenis.jpg";
+  static const String smily = "assets/smily.jpg";
+  static const String happy = "assets/happy.jpg";
+  static const String homme = "assets/homme.jpg";
+  static const String gay = "assets/gay.jpg";
+  static const String freak = "assets/freak.jpg";
+  static const String deep = "assets/deep.jpg";
+  static const String cowboy = "assets/cowboy.jpg";
+  static const String female = "assets/female.jpg";
+  static const String black = "assets/black.jpg";
 }
